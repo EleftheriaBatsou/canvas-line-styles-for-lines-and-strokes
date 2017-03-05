@@ -1,0 +1,39 @@
+<html>
+<head>
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<script>
+function draw() {
+    var canvas = document.getElementById("my_canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.lineWidth = 20;
+    ctx.lineCap = "round"; // options: butt, round, square
+    ctx.lineJoin = "miter"; // options: bevel, round, miter
+  	//for the proper angle at the bottom of the tick symbol
+		ctx.miterLimit = 2;
+  	//20px width, 10px space, 30px width, 10px scace, etc...
+    ctx.setLineDash([20,10,30,10,40,10]);
+    ctx.lineDashOffset = 10;
+  	//moveTo(150,150) - coordinates for x and y
+    ctx.moveTo(150,150);
+    ctx.lineTo(240,240);
+    ctx.lineTo(240,40);
+    ctx.stroke();
+}
+window.onload = draw;
+</script>
+</head>
+<body>
+  
+  <h3 style="text-align: center">Canvas | Line Styles for Lines and Strokes </h3>
+  
+<canvas id="my_canvas" width="500" height="400"></canvas>
+  
+  <div style="text-align: center">
+    <h5><a href="http://www.eleftheriabatsou.com" target="_blank">Eleftheria Batsou</a> | <a href="http://codepen.io/EleftheriaBatsou" target="_blank">Projects</a></h5>
+  </div> <!-- end footer -->
+  
+</body>  
+</html>
